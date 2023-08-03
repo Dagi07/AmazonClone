@@ -12,7 +12,13 @@ function Product({ title, price, rating, productImg }) {
           <small>$</small>
           <h3>{price}</h3>
         </div>
-        <div className="rating">{rating}</div>
+        <div className="rating">
+          {Array(rating)
+            .fill()
+            .map(() => (
+              <p>*</p>
+            ))}
+        </div>
         <div className="imgBtn">
           <img className="productImg" src={productImg} />
           <button>Add to Basket</button>

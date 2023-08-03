@@ -20,13 +20,13 @@ function Home() {
               Pimple Patch for Covering Zits and Blemishes, Spot Stickers for
               Face and Skin, Vegan-friendly and Not Tested on Animals"
           price="11.96"
-          rating="rating"
+          rating={4}
           productImg={mightyPatch}
         />
         <Product
           title='ASUS TUF F15 Gaming Laptop, 15.6" 144Hz FHD IPS-Type Display, Intel Core i5-10300H Processor, GeForce GTX'
           price="745"
-          rating="rating"
+          rating={5}
           productImg={asus}
         />
       </div>
@@ -34,19 +34,19 @@ function Home() {
         <Product
           title="Crayola Colored Pencils (36ct), Kids Pencil Set, Back to School Supplies, Assorted Colors, Great for Classrooms,"
           price={13.99}
-          rating="rating"
+          rating={3}
           productImg={crayola}
         />
         <Product
           title="Womens Summer Tops 2023 Dressy Casual 3/4 Sleeve Blouses Floral Work Shirts"
           price={14.1}
-          rating="rating"
+          rating={5}
           productImg={summerTop}
         />
         <Product
           title="Baylis & Harding Sweet Mandarin & Grapefruit 16.9 Ounces Hand Wash, Pack Of 3"
           price={14.99}
-          rating="rating"
+          rating={4}
           productImg={handWash}
         />
       </div>
@@ -54,15 +54,15 @@ function Home() {
         <Product
           title="BELIZZI HOME 100% Cotton Ultra Soft 6 Pack Towel Set, Contains 2 Bath Towels 28x55 inchs, 2 Hand Towels 16x24"
           price={20}
-          rating="rating"
+          rating={5}
           productImg={towels}
         />
-        <Product
+        {/* <Product
           title="Adrianna Papell Women's Short Sleeve Blouson Beaded Gown"
           price={134.0}
           rating="rating"
           productImg={dress}
-        />
+        /> */}
       </div>
     </section>
   );

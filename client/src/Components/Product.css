@@ -25,3 +25,17 @@
     max-height: 200px;
     object-fit: contain;
 }
+
+.rating {
+    display: flex;}
+
+.rating p {
+    color: yellow;
+    font-weight: 900;
+    background-color: #111;
+    font-size: 25px;
+}
+
+.product button {
+    background-color: #f0c14b;
+}
