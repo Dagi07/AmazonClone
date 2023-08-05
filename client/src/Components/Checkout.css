@@ -8,18 +8,32 @@
     /* margin-right: 5px; */
     /* width: 50%; */
 }
+.basket {
+    border-bottom: 1px solid lightgray;
+}
 .section-2 {
     margin-left: 10px;
-    width: 300px;
+    width: 500px;
+    height: 100px;
+    background-color: #f3f3f3;
+    padding: 20px;
+   
 }
 
 img {
-    width: 100%;
-    /* height: 75px;
-    object-fit: cover; */
+    width: 650px;
+    height: 50px;
+    object-fit: cover;
     margin-bottom: 10px;
+}
+
+@media (max-width: 720px) {
+    img {
+        width: 275px;
+    }
 }
 
 .section-1 h2 {
     padding: 10px;
 }
+

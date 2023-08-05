@@ -1,0 +1,16 @@
+.subtotal {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtotal_gift {
+    margin-top: 13px;
+}
+.subtotal_gift input {
+    margin-right: 5px;
+}
+
+.section-2 button {
+    background-color: #cd9042;
+    margin-top: 10px;
+}

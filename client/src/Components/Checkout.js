@@ -1,5 +1,6 @@
 import React from "react";
 import "./Checkout.css";
+import Subtotal from "./Subtotal";
 
 function Checkout() {
   return (
@@ -12,16 +13,7 @@ function Checkout() {
         </div>
       </div>
       <div className="section-2">
-        <p>
-          Subtotal (0 items) :{" "}
-          <strong>
-            <small>$</small>0
-          </strong>
-        </p>
-        <p>
-          <input type="checkbox" /> This order contains a gift
-        </p>
-        <button>Proceed to Checkout</button>
+        <Subtotal />
       </div>
     </div>
   );
