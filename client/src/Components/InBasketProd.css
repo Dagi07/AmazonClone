@@ -1,0 +1,30 @@
+.inBasket {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* .image {
+    width: 180px;
+    height: 180px;
+} */
+
+.image img {
+    object-fit: contain;
+    width: 180px;
+    height: 180px;
+}
+
+.prodInfo {
+    padding-left: 20px;
+}
+
+.btn button {
+    background-color: #cd9042;
+    margin-top: 10px;
+}
+
+.title {
+    font-style: 17px;
+    font-weight: 800;
+}

@@ -1,13 +1,19 @@
 import React from "react";
 import "./Subtotal.css";
+import { useStateValue } from "./StateProvider";
 
-function Subtotal() {
+function Subtotal({ no_of_items, totalPrice }) {
+  const [{ basket }, dispatch] = useStateValue();
+  const getTotalPrice = (basket) =>
+    basket.reduce((accum, elem) => accum + elem.price, 0);
+  // console.log(getTotalPrice(basket));
   return (
     <div className="subtotal">
       <p>
-        Subtotal (0 items) :{" "}
+        Subtotal ({basket.length} items) :{" "}
         <strong>
-          <small>$</small>0
+          <small>$</small>
+          {getTotalPrice(basket)}
         </strong>
       </p>
       <p className="subtotal_gift">

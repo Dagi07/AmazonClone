@@ -9,6 +9,10 @@
     transition: transform 0.1s ease-in ;
 }
 
+.product:hover {
+    transform: scale(1.05);
+}
+
 .price {
     display: flex;
 }
