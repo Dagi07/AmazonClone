@@ -18,7 +18,7 @@ function Login() {
           history("/");
         }
       })
-      .catch((error) => alert.error);
+      .catch((error) => alert(error.message));
   };
 
   const signUp = (e) => {
