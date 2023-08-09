@@ -27,27 +27,49 @@ function Product({ id, title, price, rating, productImg }) {
     }
   };
   return (
-    <div>
-      <div className="product">
-        <div className="title">
-          <h4>{title}</h4>
+    <div className="product">
+      {/* <div className="product">
+        <div className="product_info">
+          <div className="title">
+            <h4>{title}</h4>
+          </div>
+          <div className="price">
+            <small>$</small>
+            <h3>{price}</h3>
+          </div>
+          <div className="rating">
+            {Array(rating)
+              .fill()
+              .map(() => (
+                <p>*</p>
+              ))}
+          </div>
         </div>
-        <div className="price">
-          <small>$</small>
-          <h3>{price}</h3>
-        </div>
-        <div className="rating">
-          {Array(rating)
-            .fill()
-            .map(() => (
-              <p>*</p>
-            ))}
-        </div>
+
         <div className="imgBtn">
           <img className="productImg" src={productImg} />
           <button onClick={addToBasket}>Add to Basket</button>
         </div>
+      </div> */}
+      {/* <div > */}
+      <div className="product__info">
+        <p>{title}</p>
+        <p className="product__price">
+          <small>$</small>
+          <strong>{price}</strong>
+        </p>
+        <div className="product__rating">
+          {Array(rating)
+            .fill()
+            .map(() => (
+              <p>🌟</p>
+            ))}
+        </div>
       </div>
+
+      <img src={productImg} alt="" />
+      <button onClick={addToBasket}>Add to Basket</button>
+      {/* </div> */}
     </div>
   );
 }

@@ -1,15 +1,37 @@
 .product {
-    background-color: #fff;
+    /* background-color: #fff;
     z-index: 1;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 15px;
     padding: 15px;
     box-shadow: 0 6px 18px -9px;
-    transition: transform 0.1s ease-in ;
+    transition: transform 0.1s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    max-height: 400px;
+    min-width: 100px;
+    padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px;
+    padding: 20px;
+    width: 100%;
+    max-height: 400px;
+    min-width: 100px;
+    background-color: white;
+    z-index: 1;
+    box-shadow: 0 6px 18px -9px rgba(0, 0, 0, 0.75);
+    transition: transform 0.3s ease-in;
+
 }
 
-.product:hover {
+/* .product:hover {
     transform: scale(1.05);
 }
 
@@ -17,21 +39,69 @@
     display: flex;
 }
 
+.product_info {
+    height: 100px;
+    margin-bottom: 15px;
+
+}
+
 .imgBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
 }
 
 .productImg {
-    margin: 15px 0;
-    width: 100%;
     max-height: 200px;
+    width: 100%;
     object-fit: contain;
+    margin-bottom: 15px;
 }
 
 .rating {
-    display: flex;}
+    display: flex;
+} */
+
+.product>img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product__price {
+    margin-top: 5px;
+}
+
+.product__info {
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.product>button {
+    background: #f0c14b;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    cursor: pointer;
+}
+
+.product>button:hover {
+    background-color: rgb(190, 242, 252);
+    border-radius: 20px;
+    transform: scale(1.2);
+    padding: 2px 15px;
+}
+
+.product__rating {
+    display: flex;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
 
 .rating p {
     color: yellow;
@@ -42,4 +112,17 @@
 
 .product button {
     background-color: #f0c14b;
+    border: 1px solid;
+    margin-top: 10px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    cursor: pointer;
+
+}
+
+.product button:hover {
+    background-color: rgb(190, 242, 252);
+    border-radius: 20px;
+    transform: scale(1.2);
+    padding: 2px 15px;
 }
