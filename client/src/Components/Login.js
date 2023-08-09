@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import logo_light from "../images/Amazon_logo_light.png";
-import { auth } from "E:/Evangadi/Projects/AmazonClone/client/src/firebase.js";
+import { auth } from "../firebase.js";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
