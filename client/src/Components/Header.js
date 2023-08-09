@@ -5,9 +5,16 @@ import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { auth } from "../firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuth = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <header>
@@ -21,13 +28,19 @@ function Header() {
         <SearchIcon className="search-icon" />
       </div>
       <nav>
-        <div className="header_options">
-          <span>Hello, Guest</span>
-          <span>
-            {" "}
-            <strong>Sign in</strong>{" "}
-          </span>
-        </div>
+        <Link
+          to={!user && "login"}
+          style={{ color: "white", textDecoration: "none" }}
+        >
+          <div onClick={handleAuth} className="header_options">
+            <span>Hello, {!user ? "Guest" : user?.email} </span>
+
+            <span>
+              {" "}
+              <strong> {!user ? "Sign in" : "Sign out"} </strong>{" "}
+            </span>
+          </div>
+        </Link>
         <div className="header_options">
           <span>Returns </span>
           <span>
@@ -40,11 +53,11 @@ function Header() {
             <strong> Prime</strong>
           </span>
         </div>
-        <Link to="/checkout">
+        <Link to="/checkout" style={{ textDecoration: "none" }}>
           <div className="header_basket">
             <ShoppingBasketIcon />
             <span className="basket_count">
-              <small> {basket.length}</small>
+              <small> {!user ? 0 : basket.length}</small>
             </span>
           </div>
         </Link>

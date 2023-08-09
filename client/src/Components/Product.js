@@ -1,23 +1,30 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import { useNavigate } from "react-router-dom";
 
 function Product({ id, title, price, rating, productImg }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   // dispatch: used to push to the dataLayer
+
+  const history = useNavigate();
 
   // console.log("this is the basket", basket);
   const addToBasket = () => {
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id,
-        title,
-        productImg,
-        price,
-        rating,
-      },
-    });
+    if (!user) {
+      history("login");
+    } else {
+      dispatch({
+        type: "ADD_TO_BASKET",
+        item: {
+          id,
+          title,
+          productImg,
+          price,
+          rating,
+        },
+      });
+    }
   };
   return (
     <div>

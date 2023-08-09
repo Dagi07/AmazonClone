@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import logo_light from "../images/Amazon_logo_light.png";
 import { auth } from "../firebase.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState();
@@ -11,21 +11,35 @@ function Login() {
 
   const signIn = (e) => {
     e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((ot) => {
+        if (ot) {
+          history("/");
+        }
+      })
+      .catch((error) => alert.error);
   };
 
   const signUp = (e) => {
     e.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password).then((ot) => {
-      if (ot) {
-        history("/");
-      }
-    });
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((ot) => {
+        if (ot) {
+          history("/");
+        }
+      })
+      .catch((error) => console.error(error));
   };
   return (
     <div className="login">
-      <div className="logo-light">
-        <img src={logo_light} alt="" />
-      </div>
+      <Link to="/">
+        <div className="logo-light">
+          <img src={logo_light} alt="" />
+        </div>
+      </Link>
+
       <form action="">
         <h1>Sign-in</h1>
         <label htmlFor="Email">

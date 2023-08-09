@@ -53,6 +53,7 @@ nav {
 .header_options {
     display: flex;
     flex-direction: column;
+
 }
 
 .header_basket {
