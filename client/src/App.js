@@ -7,9 +7,16 @@ import Login from "./Components/Login";
 import { useEffect } from "react";
 import { auth } from "./firebase";
 import { useStateValue } from "./Components/StateProvider";
+import Payment from "./Components/Payment";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+const STRIPE_PUBLISHABLE_KEY = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
+const promise = loadStripe(STRIPE_PUBLISHABLE_KEY);
 
 function App() {
   const [{}, dispatch] = useStateValue();
+
   useEffect(() => {
     auth.onAuthStateChanged((otUser) => {
       if (otUser) {
@@ -25,6 +32,7 @@ function App() {
       }
     });
   }, []);
+  // console.log(process.env);
   return (
     <Router>
       <div className="App">
@@ -48,6 +56,14 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/payment"
+            element={
+              <Elements stripe={promise}>
+                <Payment />
+              </Elements>
+            }
+          />
         </Routes>
       </div>
     </Router>
