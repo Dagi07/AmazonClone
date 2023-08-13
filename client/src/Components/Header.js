@@ -29,7 +29,7 @@ function Header() {
       </div>
       <nav>
         <Link
-          to={!user && "login"}
+          to={!user && "/login"}
           style={{ color: "white", textDecoration: "none" }}
         >
           <div onClick={handleAuth} className="header_options">
@@ -41,12 +41,15 @@ function Header() {
             </span>
           </div>
         </Link>
-        <div className="header_options">
-          <span>Returns </span>
-          <span>
-            <strong> & Orders</strong>
-          </span>
-        </div>
+        <Link to="/orders" className="header__clearLink">
+          <div className="header_options">
+            <span>Returns </span>
+            <span>
+              <strong> & Orders</strong>
+            </span>
+          </div>
+        </Link>
+
         <div className="header_options">
           <span>Your </span>
           <span>

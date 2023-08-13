@@ -53,6 +53,7 @@ nav {
 .header_options {
     display: flex;
     flex-direction: column;
+    color: #fff;
 
 }
 
@@ -64,4 +65,8 @@ nav {
 
 .basket_count {
     margin-left: 10px;
+}
+
+.header__clearLink {
+    text-decoration: none;
 }

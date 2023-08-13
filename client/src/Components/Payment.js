@@ -6,6 +6,7 @@ import InBasketProd from "./InBasketProd";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { NumericFormat } from "react-number-format";
 import axios from "../axios";
+import { db } from "../firebase";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -31,6 +32,8 @@ function Payment() {
     getClientSecret();
   }, [basket]);
 
+  console.log("THE SECRET IS >>>", clientSecret);
+
   const getTotalPrice = (basket) =>
     basket.reduce((accum, elem) => accum + elem.price, 0);
   const handleSubmit = async (e) => {
@@ -44,11 +47,25 @@ function Payment() {
         },
       })
       .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setSucceeded(true);
         setError(null);
         setProcessing(false);
 
-        navigate.replace("/orders");
+        dispatch({
+          type: "EMPTY_BASKET",
+        });
+
+        navigate("/orders");
       });
   };
   const handleChange = (e) => {

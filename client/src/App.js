@@ -10,6 +10,7 @@ import { useStateValue } from "./Components/StateProvider";
 import Payment from "./Components/Payment";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./Components/Orders";
 
 const STRIPE_PUBLISHABLE_KEY = process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
 const promise = loadStripe(STRIPE_PUBLISHABLE_KEY);
@@ -56,6 +57,15 @@ function App() {
             }
           />
           <Route path="/login" element={<Login />} />
+          <Route
+            path="/orders"
+            element={
+              <>
+                <Header />
+                <Orders />
+              </>
+            }
+          />
           <Route
             path="/payment"
             element={

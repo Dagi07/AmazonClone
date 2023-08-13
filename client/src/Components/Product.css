@@ -126,3 +126,19 @@
     transform: scale(1.2);
     padding: 2px 15px;
 }
+
+@media (max-width: 960px) {
+    .product {
+        /* height: 1000px; */
+        max-height: 470px;
+    }
+
+    .product__info {
+        height: 240px;
+    }
+
+    .product>img {
+        margin-top: 2px;
+        padding-top: 2px;
+    }
+}
