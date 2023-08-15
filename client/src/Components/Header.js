@@ -24,7 +24,7 @@ function Header() {
         </div>
       </Link>
       <div className="header_search">
-        <input className="search_input" type="text" />
+        <input className="search_input header__hide" type="text" />
         <SearchIcon className="search-icon" />
       </div>
       <nav>

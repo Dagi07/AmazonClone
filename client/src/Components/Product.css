@@ -130,11 +130,13 @@
 @media (max-width: 960px) {
     .product {
         /* height: 1000px; */
-        max-height: 470px;
+        max-height: 500px;
     }
 
     .product__info {
-        height: 240px;
+        height: 250px;
+        /* margin-bottom: 1px; */
+        padding-bottom: 1px;
     }
 
     .product>img {

@@ -4,6 +4,7 @@ header {
     color: white;
     align-items: center;
     height: 60px;
+    font-size: 0.65em;
 }
 
 header div {
@@ -69,4 +70,26 @@ nav {
 
 .header__clearLink {
     text-decoration: none;
+}
+
+@media (max-width: 720px) {
+
+    .header__hide {
+        display: none;
+    }
+
+    .header_search {
+        width: 50%;
+        flex: 0.1;
+    }
+
+    .amazon-logo {
+        height: 25px;
+    }
+}
+
+@media (max-width: 960px) {
+    .header_search {
+        width: 75%;
+    }
 }
