@@ -13,12 +13,14 @@
 // Create and deploy your first functions
 // https://firebase.google.com/docs/functions/get-started
 
-// const functions = require("firebase-functions");
+const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
+
+console.log("running");
 
 //MIDDLEWARES
 app.use(cors({ origin: true }));
@@ -35,7 +37,7 @@ app.post("/payments/create", async (req, res) => {
     amount: total,
     currency: "usd",
   });
-  // 201: Ok - created
+  // 201: Ok - created (...something)
   res.status(201).send({
     clientSecret: paymentIntent.client_secret,
   });

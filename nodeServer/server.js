@@ -22,6 +22,6 @@ app.post("/payments/create", async (req, res) => {
   }
 });
 
-app.listen(6000, () => {
-  console.log("listening at 6000 ...");
+app.listen(7000, () => {
+  console.log("listening at 7000 ...");
 });

@@ -4,7 +4,7 @@ header {
     color: white;
     align-items: center;
     height: 60px;
-    font-size: 0.65em;
+    font-size: 0.75em;
 }
 
 header div {
@@ -73,6 +73,10 @@ nav {
 }
 
 @media (max-width: 720px) {
+
+    header {
+        font-size: 0.7em;
+    }
 
     .header__hide {
         display: none;
